@@ -1,53 +1,31 @@
-# 3-input Full Adder
+<!---
 
-# How it works
+This file is used to generate your project datasheet. Please fill in the information below and delete any unused
+sections.
 
-This project implements a one-bit combinational full adder.
+You can also include images in this folder and reference them in the markdown. Each image must be less than
+512 kb in size, and the combined size of all images must be less than 1 MB.
+-->
 
-It adds three one-bit input values:
+## How it works
 
-- `ui_in[0]`: A
-- `ui_in[1]`: B
-- `ui_in[2]`: Cin
+This project implements a 1-bit full adder.
 
-The circuit produces two outputs:
+- `ui_in[0]` is operand A
+- `ui_in[1]` is operand B
+- `ui_in[2]` is carry-in
+- `uo_out[0]` is the sum bit
+- `uo_out[1]` is the carry-out bit
 
-- `uo_out[0]`: Sum
-- `uo_out[1]`: Cout
+The remaining input and output pins are tied off because the design does not use them.
 
-The Boolean equations are:
+## How to test
 
-Sum = A XOR B XOR Cin
+Drive the three least-significant input bits with all 8 combinations and check the two least-significant output bits against the full-adder truth table.
 
-Cout = (A AND B) OR (A AND Cin) OR (B AND Cin)
+For local simulation, run the cocotb test in `test/`.
 
-The design is purely combinational. Therefore, the clock and reset
-signals are not used.
-
-# How to test
-
-Set the input values using `ui_in[2:0]`:
-
-- Set `ui_in[0]` to A.
-- Set `ui_in[1]` to B.
-- Set `ui_in[2]` to Cin.
-
-Read the results from:
-
-- `uo_out[0]` for Sum.
-- `uo_out[1]` for Cout.
-
-Use the following truth table:
-
-| A | B | Cin | Sum | Cout |
-|---|---|-----|-----|------|
-| 0 | 0 | 0   | 0   | 0    |
-| 0 | 0 | 1   | 1   | 0    |
-| 0 | 1 | 0   | 1   | 0    |
-| 0 | 1 | 1   | 0   | 1    |
-| 1 | 0 | 0   | 1   | 0    |
-| 1 | 0 | 1   | 0   | 1    |
-| 1 | 1 | 0   | 0   | 1    |
-| 1 | 1 | 1   | 1   | 1    |
+## External hardware
 
 No external hardware is required.
+
