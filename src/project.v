@@ -6,7 +6,7 @@
 
 `default_nettype none
 
-module tt_um_nguyenvandongsn97_sys_full_adder (
+module tt_um_thaituanhiep_full_adder  (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // Bidirectional input path
@@ -39,6 +39,9 @@ module tt_um_nguyenvandongsn97_sys_full_adder (
     wire _unused = &{ena, clk, rst_n, uio_in, ui_in[7:3], 1'b0};
 
 endmodule
+
+`default_nettype wire
+
 
 `default_nettype wire
 
