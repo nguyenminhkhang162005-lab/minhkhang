@@ -2,7 +2,7 @@
 
 import cocotb
 from cocotb.triggers import Timer
-
+ 
 
 @cocotb.test()
 async def test_full_adder_all_combinations(dut):
@@ -35,5 +35,7 @@ async def test_full_adder_all_combinations(dut):
                 )
 
     assert int(dut.uio_out.value) == 0
+    assert int(dut.uio_oe.value) == 0
+
     assert int(dut.uio_oe.value) == 0
 
