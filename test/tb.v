@@ -7,7 +7,7 @@ module tb ();
         $dumpfile("tb.fst");
         $dumpvars(0, tb);
         #1;
-    end
+    end 
 
     reg        clk;
     reg        rst_n;
@@ -39,4 +39,4 @@ module tb ();
     );
 
 endmodule
-
+x
